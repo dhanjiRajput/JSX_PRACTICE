@@ -1,0 +1,23 @@
+#box{
+    border-style: solid;
+    border-radius: 13px;
+    height: fit-content;
+    width:fit-content;
+    margin: 10px;
+    width: 290px;
+    transition-duration: 0.8s;
+  }
+  
+  #box:hover{
+    background-color: #f1f1f1;
+    transform: scale(1.03);
+  }
+
+  img{
+    height: 150px;
+    transition-duration: 0.8s;
+  }
+
+  img:hover{
+    transform: scale(1.2);
+  }
