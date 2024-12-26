@@ -8,5 +8,4 @@ const MsgBox=({username,textcolor})=>{
     );
 };
 
-
 export default MsgBox;
