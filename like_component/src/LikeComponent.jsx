@@ -16,7 +16,7 @@ const LikeComponent = () => {
             style={{ fontSize: "150px", color: "red",borderRadius:"50px" }}
           ></i>
         ) : (
-          <i className="fa-regular fa-heart" style={{ fontSize: "150px",borderRadius:"50px" }}></i>
+          <i className="fa-regular fa-heart" style={{ fontSize: "150px" }}></i>
         )}
       </button>
     </div>
