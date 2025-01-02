@@ -12,11 +12,11 @@ const LikeComponent = () => {
       <button onClick={handleLike}>
         {like ? (
           <i
-            class="fa-solid fa-heart"
+            className="fa-solid fa-heart"
             style={{ fontSize: "150px", color: "red",borderRadius:"50px" }}
           ></i>
         ) : (
-          <i class="fa-regular fa-heart" style={{ fontSize: "150px",borderRadius:"50px" }}></i>
+          <i className="fa-regular fa-heart" style={{ fontSize: "150px",borderRadius:"50px" }}></i>
         )}
       </button>
     </div>
