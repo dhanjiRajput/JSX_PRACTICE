@@ -13,10 +13,10 @@ const LikeComponent = () => {
         {like ? (
           <i
             class="fa-solid fa-heart"
-            style={{ fontSize: "150px", color: "red" }}
+            style={{ fontSize: "150px", color: "red",borderRadius:"50px" }}
           ></i>
         ) : (
-          <i class="fa-regular fa-heart" style={{ fontSize: "150px" }}></i>
+          <i class="fa-regular fa-heart" style={{ fontSize: "150px",borderRadius:"50px" }}></i>
         )}
       </button>
     </div>
