@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Helper,sum } from "./Helper";
 import Ticket from "./Ticket";
 
-const Lottery_Game=({n=3,iswinnings=15})=>{
+const Lottery_Game=({n=3,wincondition})=>{
     
     const [ticket,setticket]=useState(Helper(n));
-    const iswinning=sum(ticket)===iswinnings;
+    const iswinning=wincondition(ticket);
 
     const buyTicket=()=>{
         setticket(Helper(n));

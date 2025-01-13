@@ -2,9 +2,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Lottery_Game from './Lottery_Game'
+import { sum } from './Helper'
 
 const App=()=> {
   
+  const wincondition =(ticket)=>{
+    return ticket.every((num)=>num===ticket[0]);
+  };
+  
+
   return (
     <>
       <div>
@@ -16,7 +22,7 @@ const App=()=> {
         </a>
       </div>
       <div>
-          <Lottery_Game n={3} iswinnings={15}/>
+          <Lottery_Game n={3} wincondition={wincondition}/>
       </div>
     </>
   )
