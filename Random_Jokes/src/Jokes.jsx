@@ -1,6 +1,5 @@
+import "./Jokes.css"
 import { useEffect, useState } from "react";
-import App from "./App";
-
 const Jokes = () => {
     const API = "https://official-joke-api.appspot.com/random_joke"
     const [joke, setjoke] = useState({});
@@ -11,15 +10,17 @@ const Jokes = () => {
         setjoke(req);
     };
 
-    useEffect(() =>{
+    useEffect(() => {
         getjokes();
-    },[]);
+    }, []);
 
     return (
         <>
-            <h2>{joke.setup}</h2>
-            <h1>{joke.punchline}</h1>
-            <button onClick={getjokes}>Get A new Jokes</button>
+            <div className="jokes-box">
+                <h2>{joke.setup}</h2>
+                <h1>{joke.punchline}</h1>
+                <button onClick={getjokes}>Get A new Jokes</button>
+            </div>
         </>
     );
 };

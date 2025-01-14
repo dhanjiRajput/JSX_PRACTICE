@@ -1,0 +1,40 @@
+/* Jokes Component Styles */
+.jokes-box {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 40px;
+    width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.jokes-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.jokes-box h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #ffdb58; /* Gold color for punchline */
+}
+
+.jokes-box button {
+    padding: 15px 30px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.jokes-box button:hover {
+    background-color: #c44530;
+}
