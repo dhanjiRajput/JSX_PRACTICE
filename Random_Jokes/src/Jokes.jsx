@@ -1,13 +1,12 @@
 import "./Jokes.css"
 import { useEffect, useState } from "react";
+import API from "./axios";
 const Jokes = () => {
-    const API = "https://official-joke-api.appspot.com/random_joke"
     const [joke, setjoke] = useState({});
 
     const getjokes = async () => {
-        const res = await fetch(API);
-        const req = await res.json();
-        setjoke(req);
+        const res=await API.get("/random_joke");
+        setjoke(res.data);
     };
 
     useEffect(() => {
