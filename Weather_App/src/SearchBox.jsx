@@ -45,8 +45,8 @@ export const SearchBox = ({updateWeather}) => {
 
     return (
         <>
-            <div>
-                <form onSubmit={onsubmit}>
+            <div id='box'>
+                <form onSubmit={onsubmit} className='form'>
                     <TextField type='text' id="city" label="City Name" variant="outlined" required placeholder='Enter City Name' name="city" value={city} onChange={handleChange}></TextField>&nbsp;&nbsp;
                     <Button id="searchbtn" variant="contained" size='large' type='submit'>Search</Button>
                 </form>

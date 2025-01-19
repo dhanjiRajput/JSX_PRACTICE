@@ -1,7 +1,14 @@
 #city{
-    width: 400px !important;
+    width: 805px !important;
 }
 
 #searchbtn{
     height: 55px;
+}
+
+#box{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
