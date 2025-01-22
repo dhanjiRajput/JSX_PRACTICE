@@ -7,29 +7,34 @@ import API from './API';
 export const SearchBox = ({updateWeather}) => {
 
     const [city, setcity] = useState("");
+    const [error,seterror]=useState(false);
 
 
     const getCityWeather = async() =>{
-        const key="ff12ff931a996c801acb71f8e591cc9f";
-        const citi = await API.get(`?q=${city}&appid=${key}&units=metric`);
+        try {
+            const key="ff12ff931a996c801acb71f8e591cc9f";
+            const citi = await API.get(`?q=${city}&appid=${key}&units=metric`);
+        
+            let result={
+                city: citi.data.name,
+                country: citi.data.sys.country,
+                temp: citi.data.main.temp,
+                tempMin: citi.data.main.temp_min,
+                tempMax: citi.data.main.temp_max,
+                pressure: citi.data.main.pressure,
+                windSpeed: citi.data.wind.speed,
+                windDegree: citi.data.wind.deg,
+                feelslike:citi.data.main.feels_like,
+                sunrise: new Date(citi.data.sys.sunrise*1000).toLocaleTimeString(),
+                humidity: citi.data.main.humidity,
+                description: citi.data.weather[0].description,
+                icon: `http://openweathermap.org/img/wn/${citi.data.weather[0].icon}@2x.png`
+            };
     
-        let result={
-            city: citi.data.name,
-            country: citi.data.sys.country,
-            temp: citi.data.main.temp,
-            tempMin: citi.data.main.temp_min,
-            tempMax: citi.data.main.temp_max,
-            pressure: citi.data.main.pressure,
-            windSpeed: citi.data.wind.speed,
-            windDegree: citi.data.wind.deg,
-            feelslike:citi.data.main.feels_like,
-            sunrise: new Date(citi.data.sys.sunrise*1000).toLocaleTimeString(),
-            humidity: citi.data.main.humidity,
-            description: citi.data.weather[0].description,
-            icon: `http://openweathermap.org/img/wn/${citi.data.weather[0].icon}@2x.png`
-        };
-
-        return result;
+            return result;
+        } catch (error) {
+            throw error;
+        }
     };
   
     const handleChange = (event) => {
@@ -37,10 +42,18 @@ export const SearchBox = ({updateWeather}) => {
     };
 
     const onsubmit = async(event) => {
-        event.preventDefault();
-        setcity("");
-        let info=await getCityWeather();
-        updateWeather(info);
+        try {
+            event.preventDefault();
+            setcity("");
+            let info=await getCityWeather();
+            updateWeather(info);
+        } catch (error) {
+            seterror(true);
+        }
+        if(error){
+            alert("No Such Place Exist Try Again....!");
+            seterror(false);
+        }
     };
 
     return (
